@@ -48,10 +48,6 @@ module.exports = Class.extend({
           permRef = normalizedFnName + 'LambdaPermission' + normalizedTopicName,
           permission;
 
-      if (topicName.startsWith('arn:aws:')) {
-        // do not add permissions for external functions
-        return;
-      }
       permission = {
          Type: 'AWS::Lambda::Permission',
          Properties: {
